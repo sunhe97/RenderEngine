@@ -155,9 +155,9 @@ public:
       }
     )";
 
-    auto texture_shader = m_ShaderLibrary.Load("C:\\Users\\SunHe\\Desktop\\hazil\\Sandbox\\assets\\shaders\\Texture.glsl");
-	  m_Texture = Hazel::Texture2D::Create("C:\\Users\\SunHe\\Desktop\\hazil\\Sandbox\\assets\\textures\\Checkerboard.png");
-    m_TransparentTexture = Hazel::Texture2D::Create("C:\\Users\\SunHe\\Desktop\\hazil\\Sandbox\\assets\\textures\\ChernoLogo.png");
+    auto texture_shader = m_ShaderLibrary.Load("C:\\Users\\SunHe\\Desktop\\Hazel\\Sandbox\\assets\\shaders\\Texture.glsl");
+	  m_Texture = Hazel::Texture2D::Create("C:\\Users\\SunHe\\Desktop\\Hazel\\Sandbox\\assets\\textures\\Checkerboard.png");
+    m_TransparentTexture = Hazel::Texture2D::Create("C:\\Users\\SunHe\\Desktop\\Hazel\\Sandbox\\assets\\textures\\ChernoLogo.png");
     std::dynamic_pointer_cast<Hazel::OpenGLShader>(texture_shader)->Bind();
     std::dynamic_pointer_cast<Hazel::OpenGLShader>(texture_shader)->UploadUniformInt("u_Texture", 0);
 

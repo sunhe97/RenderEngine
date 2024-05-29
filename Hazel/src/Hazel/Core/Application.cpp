@@ -1,3 +1,4 @@
+#include "hzpch.h"
 #include "Application.h"
 
 #include "GLFW/glfw3.h"
@@ -6,7 +7,6 @@
 #include "Hazel/Renderer/Renderer.h"
 #include "Input.h"
 #include "glm/mat2x2.hpp"
-#include "hzpch.h"
 
 namespace Hazel {
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -16,7 +16,7 @@ Application::Application() {
   HZ_CORE_ASSERT(!s_Instance, "Application already exists!");
   s_Instance = this;
   m_Window = std::unique_ptr<Window>(Window::Create());
-  m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+   m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
   Renderer::Init();
   m_ImGuiLayer = new ImGuiLayer();
   PushLayer(m_ImGuiLayer);

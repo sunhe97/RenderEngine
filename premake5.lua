@@ -1,4 +1,4 @@
-workspace "hazil"
+workspace "Hazel"
 	architecture "x64"
 
 	configurations
@@ -12,23 +12,23 @@ workspace "hazil"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "hazil/vendor/GLFW/include"
-IncludeDir["Glad"] = "hazil/vendor/Glad/include"
-IncludeDir["Imgui"] = "hazil/vendor/imgui"
-IncludeDir["glm"] = "hazil/vendor/glm"
-IncludeDir["stb_image"] = "hazil/vendor/stb_image"
+IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
+IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
+IncludeDir["Imgui"] = "Hazel/vendor/imgui"
+IncludeDir["glm"] = "Hazel/vendor/glm"
+IncludeDir["stb_image"] = "Hazel/vendor/stb_image"
 
 
 
 
 -- Include premake.lua to the file
-include "hazil/vendor/GLFW"
-include "hazil/vendor/Glad"
-include "hazil/vendor/imgui"
+include "Hazel/vendor/GLFW"
+include "Hazel/vendor/Glad"
+include "Hazel/vendor/imgui"
 
 
-project "hazil"
-	location "hazil"
+project "Hazel"
+	location "Hazel"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "c++17"
@@ -38,7 +38,7 @@ project "hazil"
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "hzpch.h"
-	pchsource "hazil/src/hzpch.cpp"
+	pchsource "Hazel/src/hzpch.cpp"
 
 	files
 	{
@@ -116,16 +116,16 @@ project "Sandbox"
 
 	includedirs
 	{
-		"hazil/vendor/spdlog/include",
-		"hazil/src",
-		"hazil/vendor",
+		"Hazel/vendor/spdlog/include",
+		"Hazel/src",
+		"Hazel/vendor",
 		"%{IncludeDir.glm}"
 
 	}
 
 	links
 	{
-		"hazil"
+		"Hazel"
 	}
 
 	filter "system:windows"
